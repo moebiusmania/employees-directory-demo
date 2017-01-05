@@ -21,11 +21,15 @@ config = {
             //     filename: path.join(__dirname, '/content/data/ghost.db')
             // },
             // debug: false
-            database: {
-              client: 'postgres',
-              connection: process.env.DATABASE_URL,
-              debug: false
-            }
+            client: 'postgres',
+            connection: {
+              host: process.env.POSTGRES_HOST,
+              user: process.env.POSTGRES_USER,
+              password: process.env.POSTGRES_PASS,
+              database: process.env.POSTGRES_DB,
+              port: process.env.POSTGRES_PORT
+            },
+            debug: false
         },
 
         server: {
