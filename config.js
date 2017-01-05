@@ -6,6 +6,8 @@
 var path = require('path'),
     config;
 
+console.log(process.env);
+
 config = {
     // ### Production
     // When running Ghost in the wild, use the production environment.
@@ -19,15 +21,11 @@ config = {
             //     filename: path.join(__dirname, '/content/data/ghost.db')
             // },
             // debug: false
-            client: 'postgres',
-            connection: {
-              host: process.env.POSTGRES_HOST,
-              user: process.env.POSTGRES_USER,
-              password: process.env.POSTGRES_PASSWORD,
-              database: process.env.POSTGRES_DATABASE,
-              port: '5432'
-            },
-            debug: false
+            database: {
+              client: 'postgres',
+              connection: process.env.DATABASE_URL,
+              debug: false
+            }
         },
 
         server: {
