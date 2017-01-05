@@ -1,1 +1,1 @@
-echo "web: NODE_ENV=production node index.js"
+echo "web: npm start --production"
