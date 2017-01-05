@@ -16,19 +16,18 @@ config = {
         url: 'https://ghost-employees-directory.herokuapp.com/',
         mail: {},
         database: {
-            // client: 'sqlite3',
-            // connection: {
-            //     filename: path.join(__dirname, '/content/data/ghost.db')
-            // },
-            // debug: false
-            client: 'postgres',
+            client: 'sqlite3',
             connection: {
-              host: process.env.POSTGRES_HOST,
-              user: process.env.POSTGRES_USER,
-              password: process.env.POSTGRES_PASS,
-              database: process.env.POSTGRES_DB,
-              port: process.env.POSTGRES_PORT
+                filename: path.join(__dirname, '/content/data/ghost.db')
             },
+            // client: 'postgres',
+            // connection: {
+            //   host: process.env.POSTGRES_HOST,
+            //   user: process.env.POSTGRES_USER,
+            //   password: process.env.POSTGRES_PASS,
+            //   database: process.env.POSTGRES_DB,
+            //   port: process.env.POSTGRES_PORT
+            // },
             debug: false
         },
 
